@@ -1,0 +1,35 @@
+1. input()
+: 한 줄의 문자열을 입력 받는 함수
+
+2. map()
+: 리스트의 모든 원소에 각각 특정한 함수를 적용
+
+ex)
+# 단일 숫자 입력
+n = int(input())
+# 공백을 기준으로 데이터를 짤라 int로 변환후 list로 변환
+자주사용 - list(map(int, input().split()))
+# 개수가 적다면 아래와 같이 가능
+a, b, c = map(int, input().split()))
+
+3. 빠르게 입력 받기
+sys.stdin.readline()
+주의 : 엔터가 줄바꿈 기호로 입력되므로 rstrip() 메서드를 함께사용해서 마지막 엔터 제거
+
+ex)
+import
+data = sys.stdin.readline().rstrip()
+
+4. 출력
+print()
+(1) 각 변수를 콤마를 이용하여 띄어쓰기로 구분하여 출력 가능
+(2) 자동 줄바꿈 - end를 통해 줄바꿈 없애기 가능
+ex)
+a = 1
+b = 2
+print(a, b) # 1 2
+print(7, end=" ")
+print(8)  # 7 8
+
+print("정답은" + str(answer) + "입니다")
+print(f"정답은 {answer}입니다.")

@@ -1,0 +1,27 @@
+0. 문자열 표현
+큰따옴표("") 와 작은따옴표('') 둘다 가능
+
+1. 초기화
+data = "Hello World"
+# 문자열 내 따옴표
+data = "Don't you know \"Python\"?"
+
+2. 연산
+(1) 덧셈
+a = "Hello"
+b = "World"
+a + " " + b 는 Hello World
+
+(2) 곱셈
+a = "String"
+a * 3 은 StringStringString
+
+(3) 인덱싱
+a = "ABCDEF"
+a[2] 는 C
+# 변경은 불가능 즉 a[2] = 'a' 불가
+
+
+(4) 슬라이싱
+a = "ABCDEF"
+a[2:4] 는 CD

@@ -1,0 +1,19 @@
+0. 사용법
+for 변수 in 리스트:
+    실행할 소스코드
+
+1. 값 순회
+# i는 1 ~ 9
+for i in range(1, 10):
+    실행할 소스코드
+
+2. continue
+for문 에서 아래쪽 소스코드들을 스킵한다.
+ex)
+for i in range(1, 10):
+    if i % 2 == 0:
+            continue
+    result += i
+
+3. break
+for문을 종료한다.

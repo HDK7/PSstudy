@@ -1,0 +1,50 @@
+0. 형태
+def 함수명(매개변수):
+    실행할 소스코드
+       return 반환 값
+
+1. 매개변수 직접 지정
+def add(a, b):
+    실행 코드
+
+add(b = 3, a = 7) # 순서 무관
+
+2. global 키워드
+: 전역변수를 불러온다.
+ex)
+a = 0
+def func():
+    global a
+    a += 1
+
+for i in range(10):
+    func()
+
+print(a) # a 는 10
+
+3. 여러개 반환 가능
+def operator(a, b):
+    one = a + b
+    two = a - b
+    return one, two
+
+a, b = operator(1, 2)
+
+
+4. 람다 표현식
+이름없는 함수를 곧바로 사용, 콜론 다음에 반환값
+print((lambda a, b: a + b)(3, 7))
+ex)
+array = [('홍길동', 50), ('이순신', 32), ('아무개', 74)]
+(1)
+def my_key(x):
+    return x[1]
+print(sorted(array, key=my_key))
+를 아래와 같이 한줄로 표현
+print(sorted(array, key=lambda x: x[1]))
+(2)
+list1 = [1,2,3,4,5]
+list2 = [6,7,8,9,10]
+
+result = list(map(lambda a, b: a + b, list1, list2))
+#result 는 [7, 9, 11, 13, 15]
