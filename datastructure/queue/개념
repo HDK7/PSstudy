@@ -1,0 +1,18 @@
+1. 선입선출의 구조
+
+2. deque를 사용
+
+3. 사용 예시
+* list를 사용하면 성능 저하
+
+from collections import deque
+
+queue = deque()
+
+queue.append(5)
+queue.append(8)
+queue.popleft()
+
+print(queue) # 정상 출력
+queue.reverse()
+print(queue) # 역출력

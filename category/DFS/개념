@@ -1,0 +1,36 @@
+1. 깊이 우선탐색. 깊은 부분을 우선적으로 탐색
+
+2. 순서
+(1) 시작노드를 스택에 삽입 후 방문처리
+
+무한반복
+(2) 스택에서 하나를 꺼내 인접 노드 중 방문하지 않은 노드를 모두 큐에 삽입 후 자신을 방문처리
+
+
+
+** stack 대신 재귀를 이용해 구현할 수 있다.
+
+3. 예제
+def dfs(graph, v, visited):
+    visited[v] = True
+    print(v, end= ' ')
+
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, i, visited)
+
+graph = [
+    [],
+    [2, 3, 8],
+    [1, 7],
+    [1, 4, 5],
+    [3, 5],
+    [3, 4],
+    [7],
+    [2, 6, 8],
+    [1, 7]
+]
+
+visited = [False] * 9
+
+dfs(graph, 1, visited)
