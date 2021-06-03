@@ -1,0 +1,61 @@
+1.
+기준 데이터를 설정하고 그 기준보다 큰데이터와 작은 데이터의 위치를 바꾼다.
+가장 많이 사용되는 방법중 하나
+
+첫번째 값을 기준으로 값는다.
+왼쪽에서는 큰 데이터를 찾고 오른쪽에서는 작은데이터를 찾는다.
+발견할 경우 스왑한다.
+만약 중간에서 크로스 된다면 기준값을 중간에 넣는다.
+그리고 좌우를 나눠 다시 처음부터 시작한다.
+
+ex)기준값은 첫번째값 5이다.
+5 (7)  9 0 3 1 6  2 (4) 8
+5  4 (9) 0 3 1 6 (2) 7  8   - 7과 4의 위치를 바꾼다.
+5  4  2  0 (3) (1) 6 9   7  8   - 9과 2의 위치를 바꾼다.
+
+
+2. 시간복잡도
+O(NlogN)
+최악의 경우 O(N^2)
+
+
+3. 구현 코드
+
+array = [5, 7, 9, 0, 3, 1, 6, 2, 4, 8]
+
+def quick_sort(array, start, end):
+    if( start >= end:
+        return
+
+    privot = start
+    left = start + 1
+    right = end
+    while(left <= right):
+        while(left <= end and array[left] <= array[pivot]):
+            left+=1
+        while(right > start and array[right] >= array[pivot]):
+        right -= 1
+        if(left > right):
+            array[right], array[pivot] = array[pivot], array[right]
+        else:
+            array[left], array[right] = array[right], array[left]
+    quick_sort(array, start, right -1)
+    quick_sort(array, right + 1, end)
+
+quick_sort(array, 0, len(array) -1)
+print(array)
+
+4. 더 간단하게 구현
+
+def quick_sort(array):
+    if len(array) <= 1:
+        return array
+    pivot = array[0]
+    tail = array[1:]
+
+    left_side = [x for x in tail if x <= pivot]
+    right_side = [x for x in tail if x > pivot]
+
+    return quick_sort(left_side) + [pivot] + quick_sort(right_side)
+
+print(quick_sort(array))
