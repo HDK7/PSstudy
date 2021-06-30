@@ -1,0 +1,52 @@
+1. 개념
+: 우선순위가 가장 높은 데이터를 가장 먼저 삭제
+
+2. 구현 방법
+(1) 리스트
+(2) 힙
+시간 복잡도 차이
+        삽입      삭제
+리스트   O(1)     O(N)
+힙      O(logN)  O(logN)
+
+N개의 데이터를 힙에 넣는 것과 빼는 것은 O(NlogN)으로 '정렬'과 시간복잡도가 같다.
+
+3. 힙의 특징
+(1) 완전 이진 트리
+(2) 항상 루트 노드를 제거
+- 최소 힙 : 루트 노드가 가장 작은 값을 가짐, 작은 값 우선 제거
+- 최대 힙 : 루트 노드가 가장 큰 값을 가짐, 큰 값 우선 제거
+(3) 최소 힙 구성 함수 : Min-Heapify()
+- 부모 노드로 거슬러 올라가며, 부모보다 자신의 값이 더 작은 경우 위치를 교체
+
+(4) 힙에 새로운 원소가 삽입될 때 Min-Heapify()를 사용하면 O(logN) 시간 복잡도로 삽입 가능
+
+(5) 원소가 제거 될때, 루트 원소를 제거 후 마지막 원소를 루트 원소로 만든 후 Min-Heapfy()를 실행한다
+
+4. 우선순위 큐 라이브러리를 활용한 힙 정렬 구현 예제
+import sys
+import heapq
+input = sys.stdin.readline
+
+def heapsort(iterable):
+    h = []
+    result = []
+    # 원소를 차례대로 삽입
+    for value in iterable:
+        heapq.heappush(h, value)
+    # 힙에 삽입된 모든 원소를 차례대로 꺼내어 담기
+    for i in range(lne(H)):
+        result.append(heapq.heappop(h))
+    return result
+
+n = int(input())
+arr = []
+
+for i in range(n):
+    arr.append(int(input())
+
+res = heapsort(arr)
+
+for i in range(n):
+    print(res[i])
+
